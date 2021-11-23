@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#"
+     xml:base="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao">
+        <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#aggregated-part-emprestimo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#aggregated-part-emprestimo">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#aggregated-part-of-emprestimo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Empréstimo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Livro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#aggregated-part-of-emprestimo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#aggregated-part-of-emprestimo">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part-of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Livro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Empréstimo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#composite-part-venda -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#composite-part-venda">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Venda"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Item-de-Venda"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Empréstimo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Empréstimo">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#aggregated-part-emprestimo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Livro"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Item-de-Venda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Item-de-Venda">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Livro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Livro">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#physical-object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Venda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Venda">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#endurant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#aggregated-part-emprestimo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Item-de-Venda"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Escravidão -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Escravidão">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Livro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#O_homem_de_lata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#O_homem_de_lata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Livro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#empréstimo_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#empréstimo_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Empréstimo"/>
+        <aggregated-part-emprestimo rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Escravidão"/>
+        <aggregated-part-emprestimo rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#O_homem_de_lata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#empréstimo_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#empréstimo_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Empréstimo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#item_de_venda_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#item_de_venda_01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Item-de-Venda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#item_de_venda_02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#item_de_venda_02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Item-de-Venda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#venda01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#venda01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Venda"/>
+        <composite-part-venda rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#item_de_venda_01"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#venda02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#venda02">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#Venda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#venda01"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/bfywfv2/ontologies/2021/10/TesteAgregacao#venda02"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
